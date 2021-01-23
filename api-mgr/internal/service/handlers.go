@@ -10,11 +10,6 @@ import (
 	"github.com/mar-tina/resource-tool/api-mgr/internal/schema"
 )
 
-type ResourceCheckPayload struct {
-	collectionName string `json:"collection"`
-	resourceName   string `json:"resource"`
-}
-
 type Payload struct {
 	Collection string `json:"collection"`
 	Resource   string `json:"resource"`
@@ -64,9 +59,15 @@ func (h *Handler) CheckIFResourceExists(w http.ResponseWriter, r *http.Request) 
 func (h *Handler) CreateCollection(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var dst schema.Collection
-	err := SimpleDecodeJSON(w, r, &dst)
+	err := DecodeJsonBody(w, r, &dst)
 	if err != nil {
-		ResponseError(w, err, -1)
+		var mr *malformedRequest
+		if errors.As(err, &mr) {
+			ResponseError(w, mr.msg, mr.status)
+		} else {
+			log.Println(err.Error())
+			ResponseError(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		}
 		return
 	}
 
