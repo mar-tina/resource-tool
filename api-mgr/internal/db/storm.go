@@ -37,7 +37,7 @@ func (s *StormDB) AddEndpointDescendants(collectionName, resourceName, serviceNa
 	// check if service already exists in the descendants list
 	for idx, srvc := range coll.Descendants {
 		//if exists update the list of resource names it is being consumed by
-		if srvc.Name != serviceName {
+		if srvc.Name == serviceName {
 			for _, rsc := range srvc.Resources {
 				if rsc != resourceName {
 					continue
@@ -74,7 +74,7 @@ func (s *StormDB) AddEndpointAncestors(collectionName, resourceName, serviceName
 	// check if service already exists in the descendants list
 	for idx, srvc := range coll.Ancestors {
 		//if exists update the list of resource names it is being consumed by
-		if srvc.Name != serviceName {
+		if srvc.Name == serviceName {
 			for _, rsc := range srvc.Resources {
 				if rsc != resourceName {
 					continue
