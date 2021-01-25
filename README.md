@@ -1,7 +1,7 @@
 # resource-tool
 
 Resource-tool is a library that wraps basic functions over mux router to ease generation of fields
-and collections on postman.
+and collections on postman and tracking service dependencies .
 
 submission for postman hackathon
 
