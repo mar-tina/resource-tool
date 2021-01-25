@@ -20,6 +20,7 @@ submission for postman hackathon
 ```
 
 simple tool for visualizing what endpoints services are referencing within your application.
+<<<<<<< HEAD
 
 ### TO Access UI
 
@@ -31,6 +32,7 @@ simple tool for visualizing what endpoints services are referencing within your 
 
 ## How to use
 ### Step One : Instantiate a new manager 
+=======
 
 When calling the mgr.New() function in postmanager pass in the endpoint that the resource tool will be running on. In this instance: "http://localhost:9999"
 
