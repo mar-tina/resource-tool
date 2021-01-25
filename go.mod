@@ -7,5 +7,7 @@ require (
 	github.com/asdine/storm v2.1.2+incompatible
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
+	github.com/lithammer/shortuuid/v3 v3.0.5
+	github.com/rs/cors v1.7.0 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
 )
