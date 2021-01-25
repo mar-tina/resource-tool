@@ -16,7 +16,7 @@ cd api-mgr/cmd
 ```
 
 simple tool for visualizing what endpoints services are referencing within your application.
-more documentation on: (postmanager)[https://github.com/mar-tina/postmanager/edit/main/README.md]
+more documentation on: [postmanager](https://github.com/mar-tina/postmanager/edit/main/README.md)
 
 When calling the mgr.New() function in postmanager pass in the endpoint that the resource tool will be running on. In this instance: "http://localhost:9999"
 
